@@ -14,7 +14,6 @@ WORKDIR /root/test-node
 RUN cat /etc/nix/nix.conf
 COPY . .
 RUN nix build .#cardano-cli-ng -o cardano-cli-ng-build
-RUN nix build .#cardano-node-ng -o cardano-node-ng-build
 RUN nix build .#cardano-cli -o cardano-cli-build
 ENV PATH="/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/default/sbin:/root/test-node/cardano-cli-ng-build/bin:/root/test-node/cardano-node-ng-build/bin:/root/test-node/cardano-cli-build/bin:$PATH"
 RUN direnv allow
