@@ -12,6 +12,7 @@ RUN mkdir /root/ipc
 WORKDIR /root/test-node
 RUN cat /etc/nix/nix.conf
 COPY . .
+RUN nix build
 RUN nix build .#cardano-cli-ng -o cardano-cli-ng-build
 RUN nix build .#cardano-node-ng -o cardano-node-ng-build
 RUN nix build .#cardano-cli -o cardano-cli-build
