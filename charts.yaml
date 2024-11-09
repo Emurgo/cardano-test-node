@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cardano-test-node
+description: A Helm chart for test node
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
